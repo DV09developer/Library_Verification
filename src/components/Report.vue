@@ -86,7 +86,9 @@ export default {
     // async chartdatas(){
       
     // },
-    generatePDF() {
+    async generatePDF() {
+      try {
+        
       const doc = new jsPDF();
       let i = 1;
 
@@ -98,13 +100,22 @@ export default {
 
       // Define columns and rows for the table
       const columns = ['SR.No.','AccessionNo', 'Availability', 'Reason']; // Replace with actual column names
-      const rows = this.tableData.map(entry => [i++ , entry.AccessionNo, entry.Availability]); // Replace field1, field2, field3 with actual field names
+      console.log(columns);
+      const tableData = await pb.collection('Library').getFullList();
 
+      let rows =[]
+      await tableData.map(record =>{
+        console.log(record)
+        rows.push([i++ , record.AccessionNo, record.Availability , ""])}
+       ); // Replace field1, field2, field3 with actual field names
       // Add table to PDF
       doc.autoTable({ head: [columns], body: rows });
 
       // Save PDF
       doc.save('table.pdf');
+      } catch (error) {
+       alert(error); 
+      }
     },
   },
   created() {

@@ -1,0 +1,165 @@
+/* @import './base.css'; */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url("book-stack.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+:root {
+  --lightred: rgb(255, 168, 168);
+}
+
+/* style FOR lendingPage , forgetpass , signup components are written start here */
+.main {
+  background-color: rgb(97, 97, 97);
+  text-align: center;
+  margin: auto;
+  margin-top: 20vh;
+  width: 30%;
+  border-radius: 9px;
+}
+
+.main-in {
+  margin: 8px;
+  padding: 8px;
+  border-radius: 7px;
+  font-weight: bolder;
+}
+
+.forgetpass {
+  text-align: left;
+  margin: 0 0 30px 10px;
+}
+
+input {
+  border: none;
+}
+
+.black{
+  color: black;
+}
+
+.link{
+  font-size: larger;
+}
+
+.link , .main-in{
+  color: var(--lightred);
+}
+/* style FOR lendingPage , forgetpass , signup components are written completes here */
+
+/* This is FOR which tag need to be curser pointer is */
+.curser{
+  cursor: pointer;
+}
+
+/* All buttons common CSS */
+button {
+  width: 150px;
+  background-color: var(--lightred);
+}
+
+/* CSS for navbar is start here */
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.navlist{
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+}
+
+.none{
+  text-decoration: none;
+}
+
+h2 {
+  font-size: xx-large;
+}
+
+.navbg {
+  background-color: aliceblue;
+  height: 10vh;
+}
+
+.componentbg{
+  background-color: aliceblue;
+  height: 90vh;
+}
+
+.showdata {
+  background-color: rgb(212, 212, 212);
+  border: 1px solid black;
+  margin: 30px 270px;
+  /* display: flex;
+  width: 700px;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center; */
+}
+
+.bookdatas {
+  display: flex;
+  font-size: 23px;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.navli{
+  font-size: 22px;
+}
+
+
+@media (max-width: 540px) {
+  .navlist {
+    width: 100%; /* Each item takes 100% of the container width (full width) */
+    margin: 15px;
+  }
+  .navbg , .componentbg{
+    height: auto;;
+  }
+  .showdata{
+    margin: auto;
+  }
+  .bookdatas {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 300px) {
+  .showdata {
+    margin: auto;
+  }
+  
+  .bookdatas {
+    font-size: 14px;
+  }
+
+  h5{
+    width: 95px !important;
+  }
+}
+
+@media (max-width: 1000px) {
+  .showdata {
+    margin: auto;
+  }
+  
+  .bookdatas {
+    font-size: 14px;
+  }
+
+  h5{
+    width: 95px !important;
+  }
+}
